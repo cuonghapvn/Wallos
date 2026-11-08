@@ -76,7 +76,7 @@ Agent dùng chung của Holdings (cài qua `holdings ./hq install`); repo này k
 | `tools/health.py`, `tools/check.sh` | `tools-dev` | Python 3.9 stdlib, POSIX sh |
 | Chạy test/health, kiểm production | `qa-tester` | `sh tools/check.sh`, `python3 tools/health.py` |
 | Thẩm định diff trước khi commit | `reviewer` | trả lời thêm: diff có đụng mã upstream không |
-| Chi phí token | `tai-chinh` | `hq cost --repo wallos` |
+| Chi phí token | `tai-chinh` | `hq cost --by repo` (dòng wallos) |
 
 ## 6. Fork và cập nhật upstream
 
