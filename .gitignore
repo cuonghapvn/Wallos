@@ -5,3 +5,6 @@
 .DS_Store
 .idea/
 .vscode/
+
+# Cuong Holdings — Quy chuẩn repo v1 (log/báo cáo của agent)
+logs/

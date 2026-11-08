@@ -8,3 +8,8 @@
 *.md
 .gitignore
 .dockerignore
+# Cuong Holdings — file quy chuẩn repo (không phải mã app, không copy vào web root của image)
+company.json
+tools/
+docs/
+logs/

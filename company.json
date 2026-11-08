@@ -1,0 +1,25 @@
+{
+  "id": "wallos",
+  "name": "Wallos (fork ellite/Wallos)",
+  "company": "tech",
+  "kind": ["web"],
+  "owners": { "web": "web-dev", "deploy": "devops", "tools": "tools-dev", "test": "qa-tester" },
+  "commands": {
+    "test": "sh tools/check.sh",
+    "health": "python3 tools/health.py --json",
+    "status": "python3 tools/health.py --only git"
+  },
+  "deploy": {
+    "vercel": null,
+    "domain": "wallos.cuongn.com",
+    "pushDeploys": ["/"],
+    "links": [{ "label": "Wallos — wallos.cuongn.com", "url": "https://wallos.cuongn.com" }],
+    "note": "Railway project `wallos`. Fork của ellite/Wallos (PHP 8.3 + nginx + SQLite, image từ Dockerfile gốc, healthcheck /health.php); không có railway.json, không có commit riêng nào ngoài file quy chuẩn. CHƯA xác nhận Railway build từ repo GitHub này hay kéo thẳng image bellamy/wallos — tạm coi mọi push main là deploy production để an toàn."
+  },
+  "budget": { "monthlyUsd": 0, "alertPct": 80 },
+  "jobs": {
+    "test":   { "cmd": "sh tools/check.sh", "mutates": false, "description": "kiểm offline: php -l (khi có php), JSON, cú pháp JS/sh, file image Docker" },
+    "health": { "cmd": "python3 tools/health.py --json", "mutates": false, "description": "git local, wallos.cuongn.com + /health.php, công cụ/file build" },
+    "status": { "cmd": "python3 tools/health.py --only git", "mutates": false, "description": "nhánh, commit chưa push/pull, file chưa commit, phiên bản upstream (không cần mạng)" }
+  }
+}
